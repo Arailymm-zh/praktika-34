@@ -1,0 +1,28 @@
+let array = [
+new Promise((resolve, reject) => {
+let rand = getRand(5);
+setTimeout(
+() => resolve(rand)
+, rand * 1000)
+}),
+new Promise((resolve, reject) => {
+let rand = getRand(5);
+setTimeout(
+() => resolve(rand)
+, rand * 1000)
+}),
+new Promise((resolve, reject) => {
+let rand = getRand(5);
+setTimeout(
+() => resolve(rand)
+, rand * 1000)
+}),
+];
+
+Promise.all(array).then(
+result => console.log(result[0] + result[1] + result[2])
+);
+
+function getRand(num) {
+return Math.floor(Math.random() * num);
+}
